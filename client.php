@@ -34,7 +34,7 @@ $SessionID = $response->body->SessionID;
  *
  * http://doc.otrs.com/doc/api/otrs/stable/Perl/Kernel/GenericInterface/Operation/Ticket/TicketCreate.pm.html
  */
-$attachment = file_get_contents("example.bin");
+$attachment = file_get_contents("README.md");
 $body = json_encode([
         'SessionID' => $SessionID,
         'Ticket' => [
@@ -56,7 +56,12 @@ $body = json_encode([
             'Charset' => 'utf8',
             'MimeType' => 'text/plain',
             'To' => 'info@znuny.com',
-        ]
+        ],
+        'Attachment' => [
+            'Content' => base64_encode($attachment),
+            'ContentType' => 'text/plain; charset=us-ascii',
+            'Filename' => 'README.md'
+        ],
     ]
 );
 
