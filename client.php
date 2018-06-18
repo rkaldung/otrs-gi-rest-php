@@ -59,7 +59,7 @@ $body = json_encode([
         ],
         'Attachment' => [
             'Content' => base64_encode($attachment),
-            'ContentType' => 'text/plain; charset=us-ascii',
+            'ContentType' => 'text/plain',
             'Filename' => 'README.md'
         ],
     ]
