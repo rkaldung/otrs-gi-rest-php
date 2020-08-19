@@ -25,8 +25,5 @@ Your client is ready to go and can be executed by `php client.php`
 #### Misc
 An introduction for the Generic Interface for the latest ((OTRS)) Community Editon is available in the [online manual](https://doc.otrs.com/doc/manual/admin/6.0/en/html/genericinterface.html).
 
-The default opererations TicketCreate and TicketUpdate are not able to send a new article via e-mail. For this use case you could install the free add-on [Znuny4OTRS-GIArticleSend](https://github.com/znuny/Znuny4OTRS-GIArticleSend).
-
-
-
+The default operations TicketCreate and TicketUpdate are not able to send a new article via e-mail. For this use case you could install the free add-on [Znuny4OTRS-GIArticleSend](https://github.com/znuny/Znuny4OTRS-GIArticleSend).
 
