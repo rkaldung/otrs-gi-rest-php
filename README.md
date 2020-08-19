@@ -1,17 +1,32 @@
-### Using OTRS Generic Interface REST with PHP
+### Using the Generic Interface REST of the ((OTRS)) Community Edition with PHP
 
-The file client.php contains an example for Generic Interface operations. The web service can be configured with the  web service configuration from [Github](https://github.com/OTRS/otrs/blob/rel-5_0/development/webservices/GenericTicketConnectorREST.yml). Upload this file to create a new REST web service.
+#### Requirements
+- ((OTRS)) Community Edition version 6
+- PHP 7.x with composer
 
-An introduction for the Generic Interface for the latest stable OTRS version is available in the  [online manual](http://doc.otrs.com/doc/manual/admin/stable/en/html/genericinterface.html).
+#### Prepare your ticket system
+First, download the web service configuration from [GitHub](https://raw.githubusercontent.com/OTRS/otrs/rel-6_0/development/webservices/GenericTicketConnectorREST.yml). Navigate as an admin to `Admin` => `Web Service Management` => `Add Web Service` => `Import web service`. Enter a name for the web service. I suggest to use `GenericTicketConnectorREST` because this is used in the example.
 
-Clone this repository and run `composer update` to add the [Unirest](https://github.com/Mashape/unirest-php) library.
+#### Install example client
+Clone this repository and run `composer update` to add the [Unirest](https://github.com/Mashape/unirest-php) library:
 
 ```bash
-$ git clone git@github.com:rkaldung/otrs-gi-rest-php.git myclient
-$ cd myclient
+$ git clone https://github.com/rkaldung/otrs-gi-rest-php.git php-rest-client
+$ cd php-rest-client
 $ composer update
 ```
 
-Edit client .php and complete the baseURL by set the proper [FQDN](https://github.com/rkaldung/otrs-gi-rest-php/blob/master/client.php#L10) and use proper [credentials](https://github.com/rkaldung/otrs-gi-rest-php/blob/master/client.php#L14). 
+#### Prepare the client
+Edit client.php and complete the baseURL and configure [FQDN](https://github.com/rkaldung/otrs-gi-rest-php/blob/master/client.php#L10), [web service name](https://github.com/rkaldung/otrs-gi-rest-php/blob/master/client.php#L11) and valid [agent credentials](https://github.com/rkaldung/otrs-gi-rest-php/blob/master/client.php#L16).
 
+#### Run you client
 Your client is ready to go and can be executed by `php client.php`
+
+#### Misc
+An introduction for the Generic Interface for the latest ((OTRS)) Community Editon is available in the [online manual](https://doc.otrs.com/doc/manual/admin/6.0/en/html/genericinterface.html).
+
+The default opererations TicketCreate and TicketUpdate are not able to send a new article via e-mail. For this use case you could install the free add-on [Znuny4OTRS-GIArticleSend](https://github.com/znuny/Znuny4OTRS-GIArticleSend).
+
+
+
+
